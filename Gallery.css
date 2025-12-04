@@ -13,7 +13,6 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
 }
 
 .header {
@@ -49,7 +48,7 @@ body {
 
 .gallery-item:hover img {
     transform: scale(1.1);
-    filter: brightness(0.80);
+    filter: brightness(0.8);
 }
 
 .info-box {
