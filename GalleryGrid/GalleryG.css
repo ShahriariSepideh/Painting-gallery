@@ -1,18 +1,20 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background: #f5f5f5;
     padding: 20px 0;
-    direction: rtl;
+    direction: ltr;
     font-family: "Adelle Sans Devanagari";
 }
 
-.container {
+.wrapper {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .header {
@@ -28,12 +30,14 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
+    padding: 0 30px;
 }
 
 .gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: 12px;
+    border: 8px solid;
     height: 250px;
     cursor: pointer;
 }
@@ -42,7 +46,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     transition: transform 0.5s ease;
 }
 
@@ -51,32 +54,45 @@ body {
     filter: brightness(0.8);
 }
 
+
 .info-box {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: grid;
+    place-items: center;
     color: #ffffff;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(6px);
-    transform: translateY(130%);
+    transform: translateY(100%);
     opacity: 0;
-    transition: transform 0.8s ease, opacity 0.8s ease;
+    transition: transform 0.8s ease, 0.8s ease;
 }
 
 .gallery-item:hover .info-box {
-    transform: translateY(-40%);
+    transform: translateY(0);
     opacity: 1;
+}
+
+.special-box {
+    background: #f18537;
+    color: #fff;
+    font-size: 4rem;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    height: 250px;
+    text-align: center;
 }
 
 @media (min-width: 600px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .special-box {
+        grid-column: span 2;
     }
 }
 
